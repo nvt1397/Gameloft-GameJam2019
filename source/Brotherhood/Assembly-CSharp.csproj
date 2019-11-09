@@ -60,7 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Aim.cs" />
+    <Compile Include="Assets\Scripts\AutoGunMachine.cs" />
+    <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GunMachine.cs" />
     <Compile Include="Assets\Scripts\ObjectPooling.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Unity/Git/brotherhood/source/Brotherhood/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

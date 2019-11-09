@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Mathf.Clamp(currentHP, 0, 100);
-        HPSlider.value = currentHP;
+        //HPSlider.value = currentHP;
         Mathf.Clamp(currentOzoneVal, 0, 100);
-        OzoneSlider.value = currentOzoneVal;
+        //OzoneSlider.value = currentOzoneVal;
     }
 }
