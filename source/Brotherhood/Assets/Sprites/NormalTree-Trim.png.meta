@@ -1,23 +1,22 @@
 fileFormatVersion: 2
-guid: 17406aabe01bfbd41a6f8b5d3f9ba3e7
+guid: 9f0e7e88e48b318439d0ef066bb91c81
 TextureImporter:
   fileIDToRecycleName:
-    21300000: NormalTree_0
-    21300002: NormalTree_1
-    21300004: NormalTree_2
-    21300006: NormalTree_3
-    21300008: NormalTree_4
-    21300010: NormalTree_5
-    21300012: NormalTree_6
-    21300014: NormalTree_7
-    21300016: NormalTree_8
-    21300018: NormalTree_9
-    21300020: NormalTree_10
-    21300022: NormalTree_11
-    21300024: NormalTree_12
-    21300026: NormalTree_13
-    21300028: NormalTree_14
-    21300030: NormalTree_15
+    21300000: NormalTree-Trim_0
+    21300002: NormalTree-Trim_1
+    21300004: NormalTree-Trim_2
+    21300006: NormalTree-Trim_3
+    21300008: NormalTree-Trim_4
+    21300010: NormalTree-Trim_5
+    21300012: NormalTree-Trim_6
+    21300014: NormalTree-Trim_7
+    21300016: NormalTree-Trim_8
+    21300018: NormalTree-Trim_9
+    21300020: NormalTree-Trim_10
+    21300022: NormalTree-Trim_11
+    21300024: NormalTree-Trim_12
+    21300026: NormalTree-Trim_13
+    21300028: NormalTree-Trim_14
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -52,7 +51,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -122,321 +121,301 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NormalTree_0
+      name: NormalTree-Trim_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe6f7d7e3af77d74f841782afa63ba90
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NormalTree_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d00bdca76a53834bbc1881ec1f419b0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NormalTree_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46fe316f9b94f3a43ad08081279a3a14
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NormalTree_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24696d4b7ac92944887b663051c2a4a4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NormalTree_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 126
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d5898a9d0dd3dc498520442c0c57173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: NormalTree_5
-      rect:
-        serializedVersion: 2
-        x: 64
+        x: 24
         y: 128
-        width: 64
-        height: 64
+        width: 16
+        height: 67
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1826973ff6060734d8398c5c98a14671
+      spriteID: e77e56c5a75186748a64e02616aa4c32
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_6
+      name: NormalTree-Trim_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 93
+        y: 192
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d94fb4c63485d45abc3c7761ee9d6c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTree-Trim_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 192
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce605616b330c1489d812838fdec625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTree-Trim_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 192
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480864dd1e9e0b742833ce7e98540dac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTree-Trim_4
+      rect:
+        serializedVersion: 2
+        x: 86
         y: 128
-        width: 64
-        height: 64
+        width: 21
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 067b42782796e334c841678d14a3916e
+      spriteID: 086e1b04eb02bd847be84112d8470f35
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_7
+      name: NormalTree-Trim_5
       rect:
         serializedVersion: 2
-        x: 192
+        x: 148
         y: 128
-        width: 64
-        height: 64
+        width: 23
+        height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5a288ec2522bf944a4fff5ec070eea5
+      spriteID: 99e577463f3ea5c40a9ad95bddbd73af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_8
+      name: NormalTree-Trim_6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 202
+        y: 128
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f608ad9b1e38c4eafd2b7aafe3d29d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NormalTree-Trim_7
+      rect:
+        serializedVersion: 2
+        x: 11
         y: 64
-        width: 64
-        height: 64
+        width: 40
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68e209da75293244a9557129a24b55fe
+      spriteID: 32daaf3e0b7a97f4e8528ce4fe879b08
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_9
+      name: NormalTree-Trim_8
       rect:
         serializedVersion: 2
-        x: 64
+        x: 73
         y: 64
-        width: 64
-        height: 64
+        width: 42
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81357de207237b947a8eac9e5303f964
+      spriteID: 8a28a34b9106ec74f84e20f28cb3645b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_10
+      name: NormalTree-Trim_9
       rect:
         serializedVersion: 2
-        x: 128
+        x: 135
         y: 64
-        width: 64
-        height: 64
+        width: 47
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 776e90dedeef04347b93f3db8940b0a3
+      spriteID: 8bd51afc34c49e540841a731ddde06f0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_11
+      name: NormalTree-Trim_10
       rect:
         serializedVersion: 2
-        x: 192
+        x: 200
         y: 64
-        width: 64
-        height: 64
+        width: 44
+        height: 43
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f647189b1ade8414f8cb1f38863846bd
+      spriteID: 8809299e70e2e064da25a0ba047cee37
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_12
+      name: NormalTree-Trim_11
       rect:
         serializedVersion: 2
-        x: 0
+        x: 9
         y: 0
-        width: 64
-        height: 64
+        width: 42
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2807ab3f09d3fa45b365fc25a82b1ec
+      spriteID: f6b4680acaa8d234aae7c2a6d76201d8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_13
+      name: NormalTree-Trim_12
       rect:
         serializedVersion: 2
-        x: 64
+        x: 73
         y: 0
-        width: 64
-        height: 64
+        width: 42
+        height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fa3661d7f70dc4418415fbc5d7e5717
+      spriteID: d6cb05e6b24217945a27a5150616821e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_14
+      name: NormalTree-Trim_13
       rect:
         serializedVersion: 2
-        x: 128
+        x: 151
         y: 0
-        width: 64
-        height: 64
+        width: 16
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6434b76953b9e5842bce3fb47112cd76
+      spriteID: d7af427f3672ac243913f174f7cd880b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NormalTree_15
+      name: NormalTree-Trim_14
       rect:
         serializedVersion: 2
-        x: 192
+        x: 211
         y: 0
-        width: 64
-        height: 64
+        width: 21
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54fc6f7304413c54681e4994ef11fbbc
+      spriteID: efdc8ccc299959a4a87ae22fdf82d21f
       vertices: []
       indices: 
       edges: []
@@ -444,7 +423,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 896f96c94fde22a40bc470098c7ba942
+    spriteID: b60012dbc05a7ce4086cc7eff6c98e03
     vertices: []
     indices: 
     edges: []
