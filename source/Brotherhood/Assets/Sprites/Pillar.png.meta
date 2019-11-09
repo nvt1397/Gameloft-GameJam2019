@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: bcfe8a93bf53cd946a69a320eddb6194
+guid: 6b675df70dacf444fbb8ede84da4a4b7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: UI_0
-    21300002: UI_1
+    21300000: Pillar_0
+    21300002: Pillar_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -108,13 +108,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_0
+      name: Pillar_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 40
-        width: 16
-        height: 76
+        x: 17
+        y: 191
+        width: 28
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,19 +122,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ded20d8e6dfb4d4e8e6a496eccdeb06
+      spriteID: a4bb6f6a05d6b3146a4b26168650dbb3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_1
+      name: Pillar_1
       rect:
         serializedVersion: 2
-        x: 27
-        y: 40
-        width: 16
-        height: 76
+        x: 26
+        y: 153
+        width: 9
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,7 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1aa9751d976024419285b37c8968472
+      spriteID: 80d7ecd2e2f14a545b94ab0460d758e2
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c06e42a7dded5764eb7c3c857192cd49
+    spriteID: 699535f6f41437d419b094d3d727d7a2
     vertices: []
     indices: 
     edges: []
