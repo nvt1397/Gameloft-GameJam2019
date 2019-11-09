@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     GameObject player;
     private float currentOzoneVal;  
     private int currentHP;
+    public ObjectPooling[] playerBullets;
 
     public Slider HPSlider;
     public Slider OzoneSlider;
