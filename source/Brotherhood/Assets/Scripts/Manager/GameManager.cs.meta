@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: 581063429f93ba64589dc12a54289cef
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pollutionCloud: {fileID: 3744761628455837238, guid: 7b1774942a3d0ff41848510e1aa9a699,
+      type: 3}
+  - playerBullet: {fileID: 7997042856397682978, guid: 370e7664d03d77f45b64fd2ba80606a5,
+      type: 3}
+  - playerBulletPool: {instanceID: 0}
+  - enemyBullet: {fileID: 9036656442451556372, guid: 28403f7193d9c614a92d2df11a5b14a8,
+      type: 3}
+  - enemyBulletPool: {instanceID: 0}
+  - enemy1: {fileID: 3881418172693553851, guid: 4b3ff2350d25ca744b8b159fa0025df7,
+      type: 3}
+  - enemy1Pool: {instanceID: 0}
+  - enemy2: {instanceID: 0}
+  - enemy2Pool: {instanceID: 0}
+  - enemy3: {fileID: 8868721798184719222, guid: 60558957bba2c844c98f60c245fa8e18,
+      type: 3}
+  - enemy3Pool: {instanceID: 0}
+  - tree: {fileID: 3754545599573633384, guid: 59533644e5c1b2a41bc45c33ce63365a, type: 3}
+  - treePool: {instanceID: 0}
+  - minigun: {fileID: 8122288422325102736, guid: fa37862f8bae2594fb8548f9e83a3eeb,
+      type: 3}
+  - minigunPool: {instanceID: 0}
+  - HPSlider: {instanceID: 0}
+  - OzoneSlider: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

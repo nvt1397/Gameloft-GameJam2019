@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7848500828221137165
 Transform:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 270758853
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e064f90a99186b84ea46957846fed42e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &7848500828221137167
@@ -91,7 +91,7 @@ Animator:
   m_GameObject: {fileID: 7848500828221137170}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 153a7d32f0e0ac54f8e0928707249a75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7848500828221137170}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41846f3a34504ad418525c5ef04310ff, type: 3}
   m_Name: 
@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 8122288421654696379}
   - component: {fileID: 8122288421654696378}
   - component: {fileID: 7848500828291033215}
-  - component: {fileID: 7848500828291033214}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -185,15 +184,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300002, guid: a56f8aa8f43a9a442a9794f0270134d0, type: 3}
+  m_Sprite: {fileID: 21300002, guid: e8b218fabbc651946b58cabae4611710, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.11, y: 0.27}
+  m_Size: {x: 0.11, y: 0.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7848500828291033215
@@ -217,25 +216,6 @@ MonoBehaviour:
   closestEnemy: {fileID: 0}
   allEnemies: []
   AngleLimited: 30
---- !u!114 &7848500828291033214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8122288421654696380}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb0b166b55d30a4409874dbf99a8b2c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charging: 0
-  delayChargingTime: 1
-  ChargingTime: 1
-  speed: 3
-  active: 0
-  AimTarget: {fileID: 7848500828221137165}
-  bullet: {fileID: 7997042856397682978, guid: 370e7664d03d77f45b64fd2ba80606a5, type: 3}
 --- !u!1 &8122288422325102736
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8122288422325102750}
   - component: {fileID: 8122288422325102751}
+  - component: {fileID: 1111567078}
   m_Layer: 0
   m_Name: MiniGun
   m_TagString: Untagged
@@ -316,3 +297,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1111567078
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8122288422325102736}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000000037252903, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.29, y: 0.2}
+    newSize: {x: 0.29, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1258707, y: 0.2}
+  m_EdgeRadius: 0

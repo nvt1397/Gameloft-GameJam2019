@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-    private ObjectPooling _instance;
-    public GameObject ObjToPool;
+    private static ObjectPooling _instance;
     private List<GameObject> _pool;
+    private GameObject _objToPool;
+    public int getPoolSize()
+    {
+        return _pool.Count;
+    }
+    void Awake()
+    {
+        _instance = this;
+    }
     public ObjectPooling myInstance
     {
         get
@@ -18,13 +26,15 @@ public class ObjectPooling : MonoBehaviour
             return _instance;
         }
     }
-    public void InitPool(int poolSize)
+    public void InitPool(int poolSize,GameObject objToPool)
     {
+        _objToPool = objToPool;
         _pool = new List<GameObject>();
         for(int i = 0; i < poolSize; i++)
         {
-            _pool.Add(Instantiate(ObjToPool));
-            _pool[i].SetActive(false);
+            GameObject obj = (GameObject)Instantiate(objToPool);       
+            obj.SetActive(false);
+            _pool.Add(obj);
         }
 
     }
@@ -33,11 +43,11 @@ public class ObjectPooling : MonoBehaviour
     {
         GameObject obj;
         if (_pool.Count == 0)
-            _pool.Add(Instantiate(ObjToPool));
-            obj = _pool[_pool.Count - 1];
-        obj.SetActive(true);
+            _pool.Add(Instantiate(_objToPool));
+            obj = _pool[_pool.Count - 1];   
         obj.transform.position = pos;
         obj.transform.rotation = rot;
+        obj.SetActive(true);
         _pool.RemoveAt(_pool.Count - 1);
         return obj;
     }
