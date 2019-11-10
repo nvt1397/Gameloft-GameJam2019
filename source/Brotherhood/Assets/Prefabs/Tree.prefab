@@ -113,10 +113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df1caeaffb81fb40a8f77843728aa6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 10
   treeVal: 0
   cleanVal: 0
   pastcleanVal: 0
+  canCut: 0
+  isTaken: 0
   lifeCycleTime: 0
 --- !u!61 &7303203221167948138
 BoxCollider2D:
@@ -128,7 +129,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.002082374, y: -0.19491017}

@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        currentCoin = 5;
+        currentCoin = 4;
         //Init tree positions
         foreach(Transform child in treeManager.transform) {
             treePositions.Add(child.gameObject);

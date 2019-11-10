@@ -24,7 +24,7 @@ public class ShootOfEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "PlayerBullet")
+        if(col.gameObject.tag == "PlayerBullet" || col.gameObject.tag == "TreeInSlot" || col.gameObject.tag == "Minigun")
         {
             Destroy(gameObject);
         }

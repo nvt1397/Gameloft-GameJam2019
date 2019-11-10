@@ -51,7 +51,7 @@ public class AutoCreateEnemy : MonoBehaviour
 		// Defines the min and max ranges for x and y
 		Vector2 pos = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
         // Choose a new goods to spawn from the array (note I specifically call it a 'prefab' to avoid confusing myself!)
-        GameObject enemy = enemysList[Random.Range(1, enemysList.Count -1)];
+        GameObject enemy = enemysList[Random.Range(0, enemysList.Count)];
 
 		// Creates the random object at the random 2D position.
 		Instantiate(enemy, pos, transform.rotation);

@@ -10,7 +10,7 @@ public class GunDrag : MonoBehaviour
     private bool inAslot;
     public GameObject gunSpawned;
     public GameObject slot;
-
+    GameManager manager;
     private bool touching;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,7 @@ public class GunDrag : MonoBehaviour
         HaveGun = false;
         touching = true;
         barrel = GameObject.FindGameObjectWithTag("Barrel");
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
     }
 
@@ -104,9 +105,9 @@ public class GunDrag : MonoBehaviour
             if (!touching)
             {
                 HaveGun = slot.GetComponent<SlotGun>().HaveGun;
-                if (!HaveGun)
+                if (!HaveGun && manager.currentCoin >= 5)
                 {
-
+                    manager.currentCoin -= 5;
                     GameObject gun = Instantiate(gunSpawned, slot.transform.position + Vector3.down*0.25f, Quaternion.identity);
                     gun.transform.parent = slot.transform;
                     slot.GetComponent<SlotGun>().HaveGun = true;

@@ -13,6 +13,9 @@ TagManager:
   - Barrel
   - SlotGun
   - TreeInSlot
+  - EnemyBullet
+  - Minigun
+  - Ground
   layers:
   - Default
   - TransparentFX
