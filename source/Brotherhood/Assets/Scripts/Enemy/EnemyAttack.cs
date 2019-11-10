@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttack: MonoBehaviour
+public class EnemyAttack: Enemy
 {
     public float moveSpeed = 1f;
     public Rigidbody2D enemy;
@@ -12,12 +12,15 @@ public class EnemyAttack: MonoBehaviour
     Vector2 currentPos;
     bool play = true;
     Vector2 direction;
-
+    [SerializeField]
+    float currentHP;
     void Start()
     {
         dir = Vector2.up;
         InvokeRepeating("Start1", 0f, 1f);
         enemy = GetComponent<Rigidbody2D>();
+        maxHP = 20;
+        currentHP = maxHP;
     }
     void Start1()
     {
@@ -38,6 +41,12 @@ public class EnemyAttack: MonoBehaviour
         transform.position = Vector2.Lerp(currentPos, target, Time.deltaTime);//movement from current position to target position
         targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90; //angle of rotation of gameobject
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetAngle), turnSpeed * Time.deltaTime); //rotation from current direction to target direction
+
+
+        if (currentHP <= 0)
+        {
+            Debug.Log(gameObject.name + "Destroyed");
+        }
     }
     void OnCollisionEnter2D()
     {
@@ -52,5 +61,16 @@ public class EnemyAttack: MonoBehaviour
         InvokeRepeating("Start1", -1f, 1f);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            currentHP -= 3;
+        }
+        if (collision.gameObject.tag == "MiniBullet")
+        {
+            currentHP -= 1;
+        }
+    }
 
 }

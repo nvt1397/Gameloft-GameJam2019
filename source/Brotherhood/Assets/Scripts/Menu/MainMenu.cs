@@ -9,12 +9,11 @@ public class MainMenu : MonoBehaviour
     {
         if(Input.touchCount>0)
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(1);
         }
     }
     public void QuitGame()
     {
-        Debug.Log("QUIT");
         Application.Quit();
     }
 }

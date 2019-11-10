@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7997042856397682979}
   - component: {fileID: 50163188387771928}
   - component: {fileID: 114339973952357416}
+  - component: {fileID: 61070294143958534}
   m_Layer: 0
   m_Name: EnergyBullet
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,3 +135,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683169bd5cdc8054485ad4d1d95e2950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &61070294143958534
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7997042856397682978}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00787282, y: 0.09605089}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.09518671, y: 0.18966275}
+  m_EdgeRadius: 0

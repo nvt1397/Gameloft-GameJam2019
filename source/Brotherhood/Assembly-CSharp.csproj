@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AutoCreateEnemy.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAttack.cs" />
@@ -69,16 +70,22 @@
     <Compile Include="Assets\Scripts\Enemy\ThiefEnemy.cs" />
     <Compile Include="Assets\Scripts\Gun\Aim.cs" />
     <Compile Include="Assets\Scripts\Gun\AutoGunMachine.cs" />
+    <Compile Include="Assets\Scripts\Gun\GunDrag.cs" />
     <Compile Include="Assets\Scripts\Gun\GunMachine.cs" />
+    <Compile Include="Assets\Scripts\Gun\SlotGun.cs" />
+    <Compile Include="Assets\Scripts\Gun\TouchGunIcon.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager\ObjectPooling.cs" />
+    <Compile Include="Assets\Scripts\Manager\Slot.cs" />
+    <Compile Include="Assets\Scripts\Manager\TouchItem.cs" />
+    <Compile Include="Assets\Scripts\Manager\TreeDrag.cs" />
     <Compile Include="Assets\Scripts\Menu\btnFX.cs" />
     <Compile Include="Assets\Scripts\Menu\ClickSound.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseButton.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Menu\spaceshipScript.cs" />
+    <Compile Include="Assets\Scripts\Tree\TreeCut.cs" />
     <Compile Include="Assets\Scripts\Tree\TreeGrown.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Unity/Git/brotherhood/source/Brotherhood/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

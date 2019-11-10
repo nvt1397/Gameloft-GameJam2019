@@ -43,15 +43,13 @@ public class PauseMenu : MonoBehaviour
     //    Time.timeScale = 0f;
     //    GameIsPaused = true;
     //}
-    public void LoadMenu()
+
+
+    public void Restart()
     {
-        if(Input.touchCount > 0)
-        {
-            Debug.Log("Loading...");
-            SceneManager.LoadScene("Menu");
-        }
-        
+        SceneManager.LoadScene(1);
     }
+
     public void Quit()
     {
         if (Input.touchCount > 0)

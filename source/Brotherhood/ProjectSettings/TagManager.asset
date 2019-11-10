@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Enemy
   - GameManager
+  - Tree
+  - Gun
+  - PlayerBullet
+  - MiniBullet
+  - Barrel
+  - SlotGun
   layers:
   - Default
   - TransparentFX
