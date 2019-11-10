@@ -10,16 +10,19 @@ public class PoisonEnemy : Enemy
     public float minX = -9f;
     public float maxY = 4f;
     public float minY = 2f;
-
+    GameManager manager;
     public float tChange = 0f;
     public float randomX;
     public float randomY;
     public float moveSpeed = 1f;
-
+    float currentHP;
 
     void Start()
     {
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         enemy = GetComponent<Rigidbody2D>();
+        currentHP = manager.enemyMaxHp1;
+        manager.monsterCount += 1;
     }
 
     void Update()
@@ -43,6 +46,21 @@ public class PoisonEnemy : Enemy
 
         // make sure the position is inside the borders
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, new Vector3(randomX, randomY, 0f), moveSpeed * Time.deltaTime);
-
+        if (currentHP <= 0)
+        {
+            manager.monsterCount -= 1;
+            Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            currentHP -= manager.mainTurretDmg;
+        }
+        if (collision.gameObject.tag == "MiniBullet")
+        {
+            currentHP -= manager.minigunDmg;
+        }
     }
 }

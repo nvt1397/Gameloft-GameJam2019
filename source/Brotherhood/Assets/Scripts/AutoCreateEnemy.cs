@@ -25,11 +25,11 @@ public class AutoCreateEnemy : MonoBehaviour
 	public float yMin = 5.5f;
 	public float yMax = 6f;
 
-
+    public float time = 5;
     // Hàm thời gian sinh quái
     public float timeWaitingForNextSpawn()
     {
-        return 3;
+        return time;
     }
 
 	public void Update()

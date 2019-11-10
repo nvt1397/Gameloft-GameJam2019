@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 582328622}
   m_Layer: 0
   m_Name: ThiefAlien
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,7 +241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e425503c5ad52c48a86d5aa763ae31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
-  time: 20
+  enemy: {fileID: 582328623}
+  treesList: []
+  treeWasChoice: {fileID: 0}
+  light: {fileID: 645860023}
+  randomX: 0
+  randomY: 0
+  time: 2
   tree: {fileID: 0}
   moveSpeed: 2

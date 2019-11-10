@@ -21,5 +21,18 @@ public class ShootOfEnemy : MonoBehaviour
     {
         projectile.velocity = Vector2.down * moveSpeed;
     }
-   
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "PlayerBullet")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
 }

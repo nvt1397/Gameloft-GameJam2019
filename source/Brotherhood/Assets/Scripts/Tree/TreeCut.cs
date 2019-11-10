@@ -8,7 +8,6 @@ public class TreeCut : MonoBehaviour
     private bool inAslot;
     public GameObject treeSpawned;
     public GameObject slot;
-
     private bool touching;
 
     GameManager manager;
@@ -98,10 +97,16 @@ public class TreeCut : MonoBehaviour
                 if (HaveTree)
                 {
                     GameObject treecut = thisSlot.transform.GetChild(0).gameObject;
-                    manager.currentCoin += treecut.GetComponent<TreeGrown>().treeVal;
-                    Destroy(treecut);
-                    thisSlot.tree = null;
-                    thisSlot.HaveTree = false;
+                    TreeGrown stat = treecut.GetComponent<TreeGrown>();
+                    if (stat.canCut) {
+                        manager.currentCoin += stat.treeVal;
+                        manager.totalTreePower -= stat.cleanVal;
+                        manager.treeCount -= 1;
+                        Destroy(treecut);
+                        thisSlot.tree = null;
+                        thisSlot.HaveTree = false;
+                    }
+                    
                 }
             }
         }

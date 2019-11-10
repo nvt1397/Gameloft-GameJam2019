@@ -8,7 +8,8 @@ public class TreeDrag : MonoBehaviour
     private bool inAslot;
     public GameObject treeSpawned;
     public GameObject slot;
-   
+
+    public GameManager manager;
     private bool touching;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class TreeDrag : MonoBehaviour
         inAslot = false;
         HaveTree = false;
         touching = true;
-   
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -93,15 +94,19 @@ public class TreeDrag : MonoBehaviour
                 HaveTree = slot.GetComponent<Slot>().HaveTree;
                 if (!HaveTree)
                 {
-                    slot.GetComponent<Slot>().tree = Instantiate(treeSpawned, slot.transform.position + new Vector3(0, 1f), Quaternion.identity);
-                    slot.GetComponent<Slot>().tree.transform.parent = slot.transform;
-                    slot.GetComponent<Slot>().HaveTree = true;
+                    if(manager.currentCoin >= 2) {
+                        manager.treeCount += 1;
+                        slot.GetComponent<Slot>().tree = Instantiate(treeSpawned, slot.transform.position + new Vector3(0, 1f), Quaternion.identity);
+                        slot.GetComponent<Slot>().tree.transform.parent = slot.transform;
+                        manager.currentCoin -= 2;
+                        slot.GetComponent<Slot>().HaveTree = true;
+                    }
+                    
                 }
             }
         }
         
        
     }
-
 
 }

@@ -12,6 +12,7 @@ TagManager:
   - MiniBullet
   - Barrel
   - SlotGun
+  - TreeInSlot
   layers:
   - Default
   - TransparentFX

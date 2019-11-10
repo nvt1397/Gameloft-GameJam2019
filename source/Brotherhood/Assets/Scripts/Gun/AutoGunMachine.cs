@@ -32,7 +32,7 @@ public class AutoGunMachine : MonoBehaviour
         allEnemies = GameObject.FindObjectsOfType<Enemy>();
         foreach (Enemy curEnemy in allEnemies)
         {
-            float distanceToEnemy = (curEnemy.transform.position - this.transform.position).sqrMagnitude;
+            float distanceToEnemy = Vector2.Distance(curEnemy.transform.position, this.transform.position);
             if (distanceToEnemy < distanceToClosestEnemy)
             {
                 closestEnemy = curEnemy;

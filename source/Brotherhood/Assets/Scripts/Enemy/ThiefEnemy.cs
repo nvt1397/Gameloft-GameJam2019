@@ -5,17 +5,17 @@ using UnityEngine;
 public class ThiefEnemy : Enemy
 {
     public Rigidbody2D enemy;
-    public GameObject light;
-    GameManager manager;
     // Danh sách các vị trí của cây ở đây.
     public List<GameObject> treesList = new List<GameObject>();
-
+    public GameObject treeWasChoice;
+    public GameObject light;
+    GameManager manager;
     Vector3 direction, target;
     public float randomX;
     public float randomY;
     float tChange = 0f;
-    public float countTrees = 0;
 
+    float currentHP;
 
     [SerializeField]
     float time = 2f;
@@ -28,13 +28,21 @@ public class ThiefEnemy : Enemy
 
     private void Start()
     {
-
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        treesList = manager.treePositions;
-        light = GetComponentInChildren<GameObject>();
         light.SetActive(false);
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        currentHP = manager.enemyMaxHp3;
         enemy = GetComponent<Rigidbody2D>();
-        tree = FindTree().transform.transform;
+        foreach(GameObject tree in manager.treePositions)
+        {
+            if (tree.transform.childCount > 0)
+            {
+                treesList.Add(tree.transform.GetChild(0).gameObject);
+            }
+        }
+        
+        treeWasChoice = FindTree();
+        tree = treeWasChoice.transform.transform;
+        print("tree : " + tree.position);
         startPos = enemy.transform.position;
         target = new Vector3(tree.position.x, tree.position.y + 5);
 
@@ -45,17 +53,20 @@ public class ThiefEnemy : Enemy
     private void Update()
     {
         // Nếu không có cây nào sẽ random di chuyễn
-        if (countTrees == 0)
+        if (manager.treeCount == 0)
         {
             moveEmptyTree();
-            //enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, startPos, moveSpeed * Time.deltaTime);
+        }
+        if (currentHP <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
     private void FixedUpdate()
     {
         //trường hợp nếu phi thuyền chuẩn bị hút cây về, nhưng cây đó đã bị hủy trong lúc phi thuyền đang bay. 
-        if (countTrees > 0)
+        if (manager.treeCount > 0)
         {
             if (isHit)
             {
@@ -64,14 +75,33 @@ public class ThiefEnemy : Enemy
             if (isHit == false)
             {
                 StartCoroutine(Comeback(time));
+
+                followTarget();
             }
         }
     }
+
+    void followTarget()
+    {
+
+        Vector3 targetEnemy = new Vector3(enemy.position.x, enemy.position.y - 1.4f, 0);
+        treeWasChoice.transform.position = Vector3.MoveTowards(treeWasChoice.transform.position, targetEnemy, 10 * Time.deltaTime * 0.5f);
+
+    }
+
     IEnumerator Comeback(float timer)
     {
 
         yield return new WaitForSeconds(timer);
+        
+        treeWasChoice.transform.position = Vector3.MoveTowards(treeWasChoice.transform.position, startPos, moveSpeed * Time.deltaTime);
+        //Slot slot = treeWasChoice.transform.parent.GetComponent<Slot>();
+        //slot.HaveTree = false;
+        treeWasChoice.transform.SetParent(gameObject.transform);
+        manager.treeCount -= 1;
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, startPos, moveSpeed * Time.deltaTime);
+        light.SetActive(true);
+        if(transform.position == startPos) { Destroy(treeWasChoice); Destroy(gameObject); }
 
     }
     public void moveEnemy(Transform tree)
@@ -80,15 +110,15 @@ public class ThiefEnemy : Enemy
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, target, moveSpeed * Time.deltaTime);
         if (Mathf.Approximately(tree.position.x, enemy.position.x))
         {
-            light.SetActive(true);
             isHit = false;
         }
     }
 
     GameObject FindTree()
     {
-        print("find đc tree");
+        print("tree list count: " + treesList.Count);
         GameObject tree = treesList[Random.Range(0, treesList.Count)];
+        Debug.Log(tree.gameObject.name);
         return tree;
     }
 
@@ -104,9 +134,9 @@ public class ThiefEnemy : Enemy
 
         if (Time.time >= tChange)
         {
-            randomX = Random.Range(-9f, 9f); // with float parameters, a random float
-            randomY = Random.Range(2f, 4.5f); //  between -2.0 and 2.0 is returned
-                                              // set a random interval between 0.5 and 1.5
+            randomX = Random.Range(minX, maxX); // with float parameters, a random float
+            randomY = Random.Range(minY, maxY); //  between -2.0 and 2.0 is returned
+                                                // set a random interval between 0.5 and 1.5
             tChange = Time.time + Random.Range(3f, 5f);
         }
         // if object reached any border, revert the appropriate direction
@@ -122,5 +152,19 @@ public class ThiefEnemy : Enemy
         // make sure the position is inside the borders
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, new Vector3(randomX, randomY, 0f), moveSpeed * Time.deltaTime);
         print("enemy move khi ko co cay");
+
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerBullet")
+        {
+            currentHP -= manager.mainTurretDmg;
+        }
+        if (collision.gameObject.tag == "MiniBullet")
+        {
+            currentHP -= manager.minigunDmg;
+        }
+    }
+    
 }

@@ -11,13 +11,13 @@ public class EnemyShoot : MonoBehaviour
     public float currentTime = 0.0f;
     GameManager manager;
 
-    public float currentHP;
+    float currentHP;
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         spawn = Vector3.down*0.5f;
-        currentHP = 3;
+        currentHP = manager.enemyMaxHp2;
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class EnemyShoot : MonoBehaviour
         enemyShoot();
         if(currentHP <= 0)
         {
-            Debug.Log(gameObject.name + "Destroyed");
+            Destroy(gameObject);
         }
     }
 
@@ -34,11 +34,11 @@ public class EnemyShoot : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            currentHP -= 3;
+            currentHP -= manager.mainTurretDmg;
         }
         if (collision.gameObject.tag == "MiniBullet")
         {
-            currentHP -= 1;
+            currentHP -= manager.minigunDmg;
         }
     }
     public void enemyShoot()
@@ -47,9 +47,8 @@ public class EnemyShoot : MonoBehaviour
 
         if (currentTime > nextFire)
         {
-            //projectileSpawn = transform.position + spawn;
-            //manager.enemyBulletPool.GetObjFromPool(projectileSpawn, Quaternion.identity);
-            //Debug.Log(manager.enemyBulletPool.getPoolSize());
+            projectileSpawn = transform.position + spawn;
+            Instantiate(projectile,projectileSpawn, Quaternion.identity);
             currentTime = 0.0f;
         }
     }

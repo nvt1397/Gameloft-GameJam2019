@@ -16,16 +16,18 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     float speed;
     //Fields
-    float totalTreePower;
-
+    public float totalTreePower;
+    public int treeCount;
     [SerializeField]
-    int monsterCount;
+    public int monsterCount;
     [SerializeField]
-    float monsterPower;
+    float poisonPower;
 
     [SerializeField]
     float currentPollutionVal;  
     float currentHP = 100;
+
+    int alienCount;
 
     public int currentCoin;
     //UI
@@ -33,19 +35,20 @@ public class GameManager : MonoBehaviour
     public Text currentCoinUI;
     public Slider HPSlider;
     public Slider OzoneSlider;
-    
-    //Init Game Start
-    //player bullet
-    public GameObject playerBullet;
-    public ObjectPooling playerBulletPool;
 
-    //enemy bullet
-    public GameObject enemyBullet;
-    public ObjectPooling enemyBulletPool;
+    public int enemyMaxHp1;
+    public int enemyMaxHp2;
+    public int enemyMaxHp3;
 
+    public int mainTurretDmg;
+    public int minigunDmg;
+
+    public GameObject menu;
+    public Text lastScore;
     // Start is called before the first frame update
     void Awake()
     {
+        currentCoin = 5;
         //Init tree positions
         foreach(Transform child in treeManager.transform) {
             treePositions.Add(child.gameObject);
@@ -56,15 +59,13 @@ public class GameManager : MonoBehaviour
         {
             gunPositions.Add(child.gameObject);
         }
+        enemyMaxHp1 = 10;
+        enemyMaxHp2 = 10;
+        enemyMaxHp3 = 10;
+        mainTurretDmg = 3;
+        minigunDmg = 1;
 
         startPos = pollutionCloud.transform.position;
-
-
-        //player bullet pool
-        //playerBulletPool.InitPool(10,playerBullet);
-
-        //enemy bullet
-        //enemyBulletPool.InitPool(10, enemyBullet);
     }
 
     // Update is called once per frame
@@ -72,12 +73,11 @@ public class GameManager : MonoBehaviour
     {
         
         MoveCloud();
-        //CalculateTreePower();
         ChangePollutionVal();
         ApplyDmg();
         GameOver();
         UpdateUI();
-
+        Debug.Log(monsterCount);
         
     }
 
@@ -96,20 +96,9 @@ public class GameManager : MonoBehaviour
         pollutionCloud.transform.position = Vector3.MoveTowards(pollutionCloud.transform.position, nextPosition, speed * Time.deltaTime);
     }
 
-    private void CalculateTreePower()
-    {
-        foreach(GameObject pos in treePositions)
-        {
-            GameObject tree = (GameObject)pos.GetComponentInChildren<GameObject>();          
-            if (tree != null)
-            {
-                TreeGrown treeStat = tree.GetComponent<TreeGrown>();
-                totalTreePower += treeStat.cleanVal - treeStat.pastcleanVal;
-            }
-        }
-    }
+
     private void ChangePollutionVal() {
-        currentPollutionVal += ( + (monsterCount * monsterPower) - totalTreePower) * 0.8f * Time.deltaTime;
+        currentPollutionVal += ( + (monsterCount * poisonPower) - totalTreePower) * 0.8f * Time.deltaTime;
         currentPollutionVal = Mathf.Clamp(currentPollutionVal, 0, 100);
     }
     private void ApplyDmg()
@@ -123,7 +112,9 @@ public class GameManager : MonoBehaviour
     {
         if(currentHP <= 0)
         {
-            Debug.Log("GameOver");
+            lastScore.text = "Best Score: " + timer.text;
+            Time.timeScale = 0f;
+            menu.SetActive(true);
         }
     }
 }

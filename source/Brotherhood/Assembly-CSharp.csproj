@@ -78,14 +78,14 @@
     <Compile Include="Assets\Scripts\Manager\ObjectPooling.cs" />
     <Compile Include="Assets\Scripts\Manager\Slot.cs" />
     <Compile Include="Assets\Scripts\Manager\TouchItem.cs" />
-    <Compile Include="Assets\Scripts\Manager\TreeDrag.cs" />
     <Compile Include="Assets\Scripts\Menu\btnFX.cs" />
     <Compile Include="Assets\Scripts\Menu\ClickSound.cs" />
+    <Compile Include="Assets\Scripts\Menu\GameOverMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\Menu\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseButton.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Tree\TreeCut.cs" />
+    <Compile Include="Assets\Scripts\Tree\TreeDrag.cs" />
     <Compile Include="Assets\Scripts\Tree\TreeGrown.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Unity/Git/brotherhood/source/Brotherhood/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
