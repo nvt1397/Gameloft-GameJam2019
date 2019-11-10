@@ -1774,11 +1774,12 @@ MonoBehaviour:
   - {fileID: 8868721798184719222, guid: 60558957bba2c844c98f60c245fa8e18, type: 3}
   timeStartEnemyMoiTruong: 20
   timeStartEnemyThief: 30
-  theCountdown: 10
+  theCountdown: 15
   xMin: -11
   xMax: 11
   yMin: 8
   yMax: 8.5
+  time: 10
 --- !u!4 &272645316
 Transform:
   m_ObjectHideFlags: 0

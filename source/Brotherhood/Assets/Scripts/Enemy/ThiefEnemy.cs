@@ -29,16 +29,11 @@ public class ThiefEnemy : Enemy
     private void Start()
     {
         light.SetActive(false);
+        
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         currentHP = manager.enemyMaxHp3;
         enemy = GetComponent<Rigidbody2D>();
-        foreach(GameObject tree in manager.treePositions)
-        {
-            if (tree.transform.childCount > 0)
-            {
-                treesList.Add(tree.transform.GetChild(0).gameObject);
-            }
-        }
+        
         
         treeWasChoice = FindTree();
         tree = treeWasChoice.transform.transform;
@@ -74,9 +69,26 @@ public class ThiefEnemy : Enemy
             }
             if (isHit == false)
             {
-                StartCoroutine(Comeback(time));
+                if(treeWasChoice != null) {
+                    if (!treeWasChoice.GetComponent<TreeGrown>().isTaken)
+                    {
+                        treeWasChoice.GetComponent<TreeGrown>().isTaken = true;
+                        StartCoroutine(Comeback(time));
 
-                followTarget();
+                        followTarget();
+                    }
+                    else
+                    {
+                        StartCoroutine(Comeback(time));
+                    }
+                }
+                else
+                {
+                    StartCoroutine(Comeback(time));
+                }
+                    
+                
+                
             }
         }
     }
@@ -86,6 +98,7 @@ public class ThiefEnemy : Enemy
 
         Vector3 targetEnemy = new Vector3(enemy.position.x, enemy.position.y - 1.4f, 0);
         treeWasChoice.transform.position = Vector3.MoveTowards(treeWasChoice.transform.position, targetEnemy, 10 * Time.deltaTime * 0.5f);
+
 
     }
 

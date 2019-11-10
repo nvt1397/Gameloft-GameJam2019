@@ -13,6 +13,8 @@ public class TreeGrown : MonoBehaviour
     bool isBig;
     bool isOld;
     bool isDead;
+
+    public bool isTaken;
     GameManager manager;
     Animator anim;
     [SerializeField]
@@ -30,11 +32,19 @@ public class TreeGrown : MonoBehaviour
         manager.totalTreePower += cleanVal;
         pastcleanVal = 0;
         currentHP = 5;
+        isTaken = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (currentHP <= 0) {
+            Slot slot = transform.parent.GetComponent<Slot>();
+            slot.HaveTree = false;
+            slot.tree = null;
+            manager.treeCount--;
+            Destroy(gameObject);
+        }
         lifeCycleTime += Time.deltaTime;
         if (lifeCycleTime > 15f && isBig == false) {
             treeState = 1; treeVal = 10; cleanVal = 3; pastcleanVal = 1;
@@ -57,6 +67,9 @@ public class TreeGrown : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.gameObject.tag == "EnemyBullet")
+        {
+            currentHP--;
+        }
     }
 }
