@@ -1,2 +1,2 @@
-# Brotherhood
+# GameLoft GameJam 2019
 
